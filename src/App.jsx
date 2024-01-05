@@ -22,7 +22,7 @@ function App() {
         setMessage(e.target.value);
       }}
       />
-      <Button onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
+      <Button onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />} className="myButtonStyle">
       Send
       </Button>
 
