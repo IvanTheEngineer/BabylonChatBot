@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(89, 145, 161);
+  background-color: rgba(0, 66, 88);
 }
 
 
@@ -12,19 +12,31 @@ html, body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 }
 
 
-.myButtonStyle, .myButtonStyle.MuiButton-contained {
-  background-color: rgba(0, 66, 88);
+
+/* need to add because MUI button */
+.myButtonStyle, .myButtonStyle.MuiButton-contained {  
+  background-color: rgb(255, 255, 255);
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: rgb(0, 66, 88);
+  padding: 5px 3px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 5px;
+}
+
+.myMessageStyle {
+  background-color: rgba(240, 248, 255, 0.9); 
+  color: rgba(0, 66, 88); 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  border: 2px solid rgba(0, 66, 88); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  font-size: 16px; 
+  line-height: 1.5;
+  box-sizing: border-box; 
 }
