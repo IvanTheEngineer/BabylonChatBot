@@ -7,6 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import { OpenAI } from "openai";
+import { Chat } from "./components/Chat.jsx"
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
   useEffect(() => {
   createThread()
   }, []);
-
+  
   // variable to store and update message typed by user
   const [message, setMessage] = useState("")
 
@@ -47,8 +48,6 @@ function App() {
     );
   }
 
-  // variable to store/update chat log
-  const [chatLog, setChatLog] = useState({});
 
   // variable to store/update message list
   const [msgLog, setMsgLog] = useState([]);
@@ -60,32 +59,38 @@ function App() {
   // since setChatLog doesn't update immediately, a console.log has to be used 
   // with the same request to get updated results (need a better solution)
   const getMessages = async () => {
-    setChatLog(await openai.beta.threads.messages.list(threadID));
     const messageList = [];
     const userList = [];
     (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => messageList.push(obj.content[0].text.value));
     (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => userList.push(obj.role));
+    messageList.push("Hey there! I’m Harvest! I'm an AI assistant here to help you with information about Babylon Micro-Farms.");
+    userList.push("assistant");
     setMsgLog(messageList.reverse());
     setUserLog(userList.reverse());
     console.log(await openai.beta.threads.messages.list(threadID));
   }
 
-  // function to perform run
-  const doRun = async () => {
+  useEffect(() => {
+    setMsgLog(["Hey there! I’m Harvest! I'm an AI assistant here to help you with information about Babylon Micro-Farms."]),
+    setUserLog(["assistant"]);
+    }, []);
 
-    getMessages()
+  // function to perform run
+  async function doRun() {
+
+    getMessages();
 
     // this creates a run for our specific thread
     const myRun = await openai.beta.threads.runs.create(threadID, {
       assistant_id: import.meta.env.VITE_ASSISTANT_ID,
     });
-    
+
     // this fetches an updated version of the run we just made and stores it in a new variable
     let runStatus = await openai.beta.threads.runs.retrieve(
       threadID,
       myRun.id
     );
-    
+
     // this loop keeps fetching a new run every 1000ms until the status is "completed"
     while (runStatus.status !== "completed") {
       await new Promise((resolve) => setTimeout(resolve,
@@ -98,7 +103,7 @@ function App() {
 
     // this updates our chat log after the run is over 
     getMessages();
-  };
+  }
 
   // takes care of everything that needs to be done when user sends message
   const handleSubmit = async () => {
@@ -127,11 +132,8 @@ function App() {
   return (
     <>
       <h1>Babylon Chat Bot</h1>
-      <ul>
-        {msgLog.map((element, index) => (
-          <li>{userLog[index]}:  {element}</li>
-        ))}
-      </ul>
+      <Chat messageLog={msgLog} userLog={userLog}/>
+
       <TextField id="outlined-basic" label="Message" variant="outlined" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
