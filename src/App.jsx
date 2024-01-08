@@ -50,8 +50,11 @@ function App() {
   // variable to store/update chat log
   const [chatLog, setChatLog] = useState({});
 
-  // variable to store/update msg log
+  // variable to store/update message list
   const [msgLog, setMsgLog] = useState([]);
+
+  // variable to store/update user list
+  const [userLog, setUserLog] = useState([]);
 
   // function to update message log 
   // since setChatLog doesn't update immediately, a console.log has to be used 
@@ -59,9 +62,11 @@ function App() {
   const getMessages = async () => {
     setChatLog(await openai.beta.threads.messages.list(threadID));
     const messageList = [];
-    (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => messageList.push(obj.content[0].text.value))
+    const userList = [];
+    (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => messageList.push(obj.content[0].text.value));
+    (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => userList.push(obj.role));
     setMsgLog(messageList.reverse());
-    console.log(messageList);
+    setUserLog(userList.reverse());
     console.log(await openai.beta.threads.messages.list(threadID));
   }
 
@@ -69,7 +74,7 @@ function App() {
   const doRun = async () => {
 
     getMessages()
-    
+
     // this creates a run for our specific thread
     const myRun = await openai.beta.threads.runs.create(threadID, {
       assistant_id: import.meta.env.VITE_ASSISTANT_ID,
@@ -124,7 +129,7 @@ function App() {
       <h1>Babylon Chat Bot</h1>
       <ul>
         {msgLog.map((element, index) => (
-          <li key="{element}">{element}</li>
+          <li>{userLog[index]}:  {element}</li>
         ))}
       </ul>
       <TextField id="outlined-basic" label="Message" variant="outlined" value={message} 
