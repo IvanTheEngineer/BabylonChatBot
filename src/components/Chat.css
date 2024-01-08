@@ -1,0 +1,39 @@
+.chatMessage {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #0b6f97;
+    border-radius: 15px;
+    margin: 2px;
+    padding: 10px;
+}
+
+.userMessage {
+    align-self: flex-end;
+    background-color: #5991A1;
+    color: rgb(255, 255, 255);
+    margin-left: auto;
+    width: fit-content;
+}
+
+.assistantMessage {
+    align-self: flex-start;
+    margin-right: auto;
+    background-color: #004258;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+}
+
+.messageText {
+    font-weight: normal;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.messageSender {
+    font-weight: bold;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    font-family: sans-serif;
+}
