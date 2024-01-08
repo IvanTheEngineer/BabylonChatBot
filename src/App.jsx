@@ -50,17 +50,26 @@ function App() {
   // variable to store/update chat log
   const [chatLog, setChatLog] = useState({});
 
+  // variable to store/update msg log
+  const [msgLog, setMsgLog] = useState([]);
+
   // function to update message log 
   // since setChatLog doesn't update immediately, a console.log has to be used 
   // with the same request to get updated results (need a better solution)
   const getMessages = async () => {
     setChatLog(await openai.beta.threads.messages.list(threadID));
+    const messageList = [];
+    (await openai.beta.threads.messages.list(threadID)).data.forEach((obj) => messageList.push(obj.content[0].text.value))
+    setMsgLog(messageList.reverse());
+    console.log(messageList);
     console.log(await openai.beta.threads.messages.list(threadID));
   }
 
   // function to perform run
   const doRun = async () => {
 
+    getMessages()
+    
     // this creates a run for our specific thread
     const myRun = await openai.beta.threads.runs.create(threadID, {
       assistant_id: import.meta.env.VITE_ASSISTANT_ID,
@@ -113,6 +122,11 @@ function App() {
   return (
     <>
       <h1>Babylon Chat Bot</h1>
+      <ul>
+        {msgLog.map((element, index) => (
+          <li key="{element}">{element}</li>
+        ))}
+      </ul>
       <TextField id="outlined-basic" label="Message" variant="outlined" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
