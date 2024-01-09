@@ -160,7 +160,7 @@ function App() {
         setMessage(e.target.value);
       }}
       />
-      <Button style={{width:'13%', marginLeft: '5px', marginTop: "16px", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
+      <Button style={{width:'13%', marginLeft: '5px', marginTop: "16px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
       Send
       </Button>
       </div>
