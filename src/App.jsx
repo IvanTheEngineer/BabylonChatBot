@@ -131,11 +131,21 @@ function App() {
   // thread data array are older)
   return (
     <>
-      <h1 style={{fontWeight: "bold", textAlign:"center", fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"}} >
-        Harvest</h1>
-      <Chat messageLog={msgLog} userLog={userLog}/>
+      
+      
+    <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
+      <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
+        <h1 style={{ fontWeight: "bold", fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "#fff", margin: 0 }}>
+            Harvest
+        </h1>
+      </div>
+    </div>
 
-      <TextField style={{width:'80%', color: "#5991A1", marginLeft: '25px', marginTop: "8px"}} id="outlined-basic" label="Message" variant="outlined" value={message} 
+      <Chat messageLog={msgLog} userLog={userLog}/>
+      <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
+        <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
+    
+      <TextField style={{width:'80%', backgroundColor: "#004258", marginLeft: '50px', marginTop: "8px"}} id="outlined-basic" label="Ask me anything . . ." variant="outlined" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
@@ -143,7 +153,12 @@ function App() {
       <Button style={{width:'13%', marginLeft: '5px', marginTop: "8px", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
       Send
       </Button>
-
+      </div>
+      </div>
+    
+      
+      
+    
     </>
   )
 }
