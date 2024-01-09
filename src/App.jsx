@@ -135,9 +135,13 @@ function App() {
       
     <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
-        <h1 style={{ fontWeight: "bold", fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "#fff", margin: 0 }}>
+        <h1 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
             Harvest
         </h1>
+        <h3 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
+        Meet Harvest, your personal Babylon Mircro-Farms AI Assistant
+        </h3>
+
       </div>
     </div>
 
@@ -145,7 +149,7 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
     
-      <TextField style={{width:'80%', backgroundColor: "#004258", marginLeft: '50px', marginTop: "8px"}} id="outlined-basic" label="Ask me anything . . ." variant="outlined" value={message} 
+      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px"}} InputLabelProps={{ style: { color: 'white' } }} id="outlined-basic" label="Ask me anything . . ." variant="outlined" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
