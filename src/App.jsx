@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import { OpenAI } from "openai";
 import { Chat } from "./components/Chat.jsx"
+import logo from './components/logo.png'
 
 function App() {
 
@@ -135,6 +136,7 @@ function App() {
       
     <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
+      <img src= {logo} alt="Harvest Icon" style={{ width: '30px', verticalAlign: 'middle', marginRight: '10px' }} />
         <h1 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
             Harvest
         </h1>
