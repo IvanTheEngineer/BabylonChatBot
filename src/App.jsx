@@ -137,7 +137,7 @@ function App() {
     <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
       <img src= {logo} alt="Harvest Icon" style={{ width: '30px', verticalAlign: 'middle', marginRight: '10px' }} />
-        <h1 style={{ fontWeight: "bold", fontFamily: '"source-serif-pro", serif', fontWeight: '600',
+        <h1 style={{  fontFamily: '"source-serif-pro", serif', fontWeight: '600',
     fontStyle: 'normal', color: "black", margin: 0 }}>
             Harvest
         </h1>

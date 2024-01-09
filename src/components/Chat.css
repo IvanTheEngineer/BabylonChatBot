@@ -13,15 +13,21 @@
     background-color: #5991A1;
     color: rgb(255, 255, 255);
     margin-left: auto;
+    margin-right: 3%;
     width: fit-content;
+    margin-top: 20px;
 }
 
 .assistantMessage {
     align-self: flex-start;
     margin-right: auto;
+    margin-left: 3%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #004258;
     color: rgb(255, 255, 255);
     width: fit-content;
+    
 }
 
 .messageText {
