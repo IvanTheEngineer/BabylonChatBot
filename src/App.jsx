@@ -137,10 +137,12 @@ function App() {
     <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
       <img src= {logo} alt="Harvest Icon" style={{ width: '30px', verticalAlign: 'middle', marginRight: '10px' }} />
-        <h1 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
+        <h1 style={{ fontWeight: "bold", fontFamily: '"source-serif-pro", serif', fontWeight: '600',
+    fontStyle: 'normal', color: "black", margin: 0 }}>
             Harvest
         </h1>
-        <h3 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
+        <h3 style={{ fontWeight: "400", fontFamily: "source-sans-3-variable",
+    fontStyle: 'italic', color: "black", margin: 0 }}>
         Meet Harvest, your personal Babylon Micro-Farms AI Assistant
         </h3>
 
@@ -151,7 +153,9 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
     
-      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px", borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white' } }} sx={{ input: { color: 'white' } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
+      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px", borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
+    fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
+    fontVariationSettings: '"wght" 200'  } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
