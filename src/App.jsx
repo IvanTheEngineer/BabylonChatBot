@@ -141,7 +141,7 @@ function App() {
             Harvest
         </h1>
         <h3 style={{ fontWeight: "bold", fontFamily: "Monda,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", color: "black", margin: 0 }}>
-        Meet Harvest, your personal Babylon Mircro-Farms AI Assistant
+        Meet Harvest, your personal Babylon Micro-Farms AI Assistant
         </h3>
 
       </div>
@@ -151,12 +151,12 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
     
-      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px"}} InputLabelProps={{ style: { color: 'white' } }} sx={{ input: { color: 'white' } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
+      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px", borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white' } }} sx={{ input: { color: 'white' } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
       />
-      <Button style={{width:'13%', marginLeft: '5px', marginTop: "8px", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
+      <Button style={{width:'13%', marginLeft: '5px', marginTop: "16px", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
       Send
       </Button>
       </div>
