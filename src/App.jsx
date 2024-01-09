@@ -145,7 +145,7 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
     
-      <TextField style={{width:'80%', backgroundColor: "#004258", marginLeft: '50px', marginTop: "8px"}} id="outlined-basic" label="Ask me anything . . ." variant="outlined" value={message} 
+      <TextField style={{width:'80%', backgroundColor: "#004258", marginLeft: '50px', marginTop: "8px"}} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
