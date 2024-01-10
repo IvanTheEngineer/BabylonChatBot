@@ -47,11 +47,7 @@ Currently, two official plugins are available:
 
 ## Credits 
 
-- Developers 
-    Ivan Kisselev
-    Mirela Lynch
-    Tasdiq Bashar
-
-- Adviors 
-    Byron Richards
-    Simon Anderson
+Developers 
+- Ivan Kisselev
+- Mirela Lynch
+- Tasdiq Bashar
