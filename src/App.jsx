@@ -3,12 +3,13 @@ import * as React from 'react';
 import './App.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+import ReplayIcon from '@mui/icons-material/Replay';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import { OpenAI } from "openai";
 import { Chat } from "./components/Chat.jsx"
 import logo from './components/logo.png'
+import IconButton from '@mui/material/IconButton';
 
 function App() {
 
@@ -166,9 +167,8 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
       <div className="barElement">
-      <Button disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => setToggle(toggle * -1)} variant="contained" >
-      Reset
-      </Button>
+      <IconButton disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", color: "white", backgroundColor: "#004258"}} onClick={() => setToggle(toggle * -1)} variant="contained" > <ReplayIcon />
+      </IconButton>
       <TextField InputProps={{ disableUnderline: true }} style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200'  } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
@@ -176,9 +176,8 @@ function App() {
         setMessage(e.target.value);
       }}
       />
-      <Button style={{width:'fit-content', marginLeft: '5px', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
-      Send
-      </Button>
+      <IconButton style={{width:'fit-content', marginLeft: '5px', marginTop: "12px", color: "white", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" > <SendIcon />
+      </IconButton>
       </div>
       </div>
       </div>
