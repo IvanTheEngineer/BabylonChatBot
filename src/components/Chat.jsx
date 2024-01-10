@@ -13,7 +13,7 @@ export const Chat = ({messageLog, userLog}) => {
             {messageLog.map((element, index) => (
             <Message message={element} sender={userLog[index]}/>
         ))}
-        {waiting && <CircularProgress color="info" style={{marginLeft:"5px"}}/>}
+        {waiting && <CircularProgress color="info" style={{marginLeft:"3%", marginBottom:"20px"}}/>}
     </div>)
     }
 }

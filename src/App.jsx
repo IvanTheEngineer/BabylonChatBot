@@ -31,9 +31,17 @@ function App() {
   }
 
   // one time function to create a thread at the beginning
+  const [toggle, setToggle] = useState(1);
+
   useEffect(() => {
   createThread()
-  }, []);
+  }, [toggle]);
+
+  useEffect(() => {
+    if (threadID !== "") {
+      getMessages()
+    }
+    }, [threadID]);
   
   // variable to store and update message typed by user
   const [message, setMessage] = useState("")
@@ -127,6 +135,7 @@ function App() {
     }
   };
 
+ 
   // Currently no implementation for displaying messages. To see api in action go to
   // inspect element -> console as you type and send messages (Larger indexes in the 
   // thread data array are older)
@@ -152,17 +161,21 @@ function App() {
       <Chat messageLog={msgLog} userLog={userLog}/>
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
-    
-      <TextField style={{width:'80%', backgroundColor: "#004258", color: "white", marginLeft: '50px', marginTop: "8px", borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
+      <div className="barElement">
+      <Button  style={{width:'fit-content', marginLeft: '0', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => setToggle(toggle * -1)} variant="contained" >
+      Reset
+      </Button>
+      <TextField style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200'  } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
       onChange={(e) => {
         setMessage(e.target.value);
       }}
       />
-      <Button style={{width:'13%', marginLeft: '5px', marginTop: "16px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
+      <Button style={{width:'fit-content', marginLeft: '5px', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
       Send
       </Button>
+      </div>
       </div>
       </div>
     
