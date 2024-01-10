@@ -146,8 +146,13 @@ function App() {
   // thread data array are older)
   return (
     <>
-      
-      
+    <div className='links'>
+      <a href="https://babylonmicrofarms.com/" style={{ width: 'fit-content',textDecoration: "none", color: "black", marginLeft:"5%", marginRight:"5%", fontWeight: "bold", fontFamily: "source-sans-3-variable"}} > Home</a>
+      <a href="https://babylonmicrofarms.com/the-galleri-by-babylon-micro-farms/" style={{ width: 'fit-content', textDecoration: "none", color: "black", marginLeft:"5%", marginRight:"5%", fontWeight: "bold", fontFamily: "source-sans-3-variable"}} > Galleri Micro-Farm</a>
+      <a href="https://babylonmicrofarms.com/your-impact/" style={{ width: 'fit-content', textDecoration: "none", color: "black", marginLeft:"5%", marginRight:"5%", fontWeight: "bold", fontFamily: "source-sans-3-variable"}} > Sustainability</a>
+      <a href="https://babylonmicrofarms.com/faq/" style={{ width: 'fit-content',textDecoration: "none", color: "black", marginLeft:"5%", marginRight:"5%", fontWeight: "bold", fontFamily: "source-sans-3-variable"}} > FAQs</a>
+      <a href="https://www.instagram.com/babylonmicrofarms/?hl=en" style={{ width: 'fit-content',textDecoration: "none", color: "black", marginLeft:"5%", marginRight:"5%", fontWeight: "bold", fontFamily: "source-sans-3-variable"}}> Contact</a>
+    </div>
     <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
       <img src= {logo} alt="Harvest Icon" style={{ width: '30px', verticalAlign: 'middle', marginRight: '10px' }} />
