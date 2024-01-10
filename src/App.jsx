@@ -167,7 +167,7 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
       <div className="barElement">
-      <IconButton disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", color: "white", backgroundColor: "#004258"}} onClick={() => setToggle(toggle * -1)} variant="contained" > <ReplayIcon />
+      <IconButton disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", color: disableReset?"grey":"white", backgroundColor: "#004258"}} onClick={() => setToggle(toggle * -1)} variant="contained" > <ReplayIcon />
       </IconButton>
       <TextField InputProps={{ disableUnderline: true }} style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
