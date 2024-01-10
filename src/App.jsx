@@ -175,6 +175,12 @@ function App() {
       onChange={(e) => {
         setMessage(e.target.value);
       }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault(); // Prevents the default behavior of Enter key in a textarea
+          handleSubmit();
+        }
+      }}
       />
       <Button style={{width:'fit-content', marginLeft: '5px', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => handleSubmit()} variant="contained" endIcon={<SendIcon />}>
       Send
