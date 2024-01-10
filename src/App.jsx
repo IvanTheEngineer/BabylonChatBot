@@ -169,7 +169,7 @@ function App() {
       <Button disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => setToggle(toggle * -1)} variant="contained" >
       Reset
       </Button>
-      <TextField style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
+      <TextField InputProps={{ disableUnderline: true }} style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200'  } }} id="outlined-basic" label="Ask me anything . . ." variant="filled" value={message} 
       onChange={(e) => {
