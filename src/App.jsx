@@ -84,6 +84,8 @@ function App() {
     setUserLog(["assistant"]);
     }, []);
 
+    const [disableReset, setDisableReset] = useState(false);
+
   // function to perform run
   async function doRun() {
 
@@ -126,8 +128,10 @@ function App() {
       // resets message to clear field
       setMessage("");
 
+      setDisableReset(true);
       // performs a run on the thread
       await doRun();
+      setDisableReset(false);
 
       // handles any errors that occur
     } catch (error){
@@ -162,7 +166,7 @@ function App() {
       <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
         <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
       <div className="barElement">
-      <Button  style={{width:'fit-content', marginLeft: '0', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => setToggle(toggle * -1)} variant="contained" >
+      <Button disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", backgroundColor: "#004258", fontFamily: "source-sans-3-variable"}} onClick={() => setToggle(toggle * -1)} variant="contained" >
       Reset
       </Button>
       <TextField style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
