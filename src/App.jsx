@@ -157,7 +157,7 @@ function App() {
       <div style={{ background: "#5991A1", padding: "10px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px"}}>
       <img src= {logo} alt="Harvest Icon" style={{ width: '30px', verticalAlign: 'middle', marginRight: '10px' }} />
         <h1 style={{  fontFamily: '"source-serif-pro", serif', fontWeight: '600',
-    fontStyle: 'normal', color: "black", margin: 0 }}>
+    fontStyle: 'normal', color: "black", margin: 0}}>
             Harvest
         </h1>
         <h3 style={{ fontWeight: "400", fontFamily: "source-sans-3-variable",
@@ -167,12 +167,13 @@ function App() {
 
       </div>
     </div>
-
+    
       <Chat messageLog={msgLog} userLog={userLog}/>
-      <div style={{ textAlign: "center", marginBottom: "10px", maxWidth: "93%", margin: "auto" }}>
-        <div style={{ background: "#5991A1", padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
+    
+      <div style={{ textAlign: "center", marginBottom: "10px",  maxWidth: "93%", margin: "auto" }}>
+        <div style={{ background: "#5991A1",  padding: "10px", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px"}}>
       <div className="barElement">
-      <IconButton disabled={disableReset} style={{width:'fit-content', marginLeft: '0', marginTop: "12px", color: disableReset?"grey":"white", backgroundColor: "#004258"}} onClick={() => setToggle(toggle * -1)} variant="contained" > <ReplayIcon />
+      <IconButton disabled={disableReset} style={{alignSelf: "center", width:'fit-content', marginLeft: '0', marginTop: "12px", color: disableReset?"grey":"white", backgroundColor: "#004258"}} onClick={() => setToggle(toggle * -1)} variant="contained" > <ReplayIcon />
       </IconButton>
       <TextField InputProps={{ disableUnderline: true }} style={{width:'70%', flex:"1", backgroundColor: "#004258", color: "white", marginTop: "8px", marginLeft: '5px', borderRadius: "15px"}} InputLabelProps={{ style: { color: 'white', fontFamily: "source-sans-3-variable",
     fontVariationSettings: '"wght" 200' } }} sx={{ input: { color: 'white', fontFamily: "source-sans-3-variable",
@@ -187,7 +188,7 @@ function App() {
         }
       }}
       />
-      <IconButton style={{width:'fit-content', marginLeft: '5px', marginTop: "12px", color: "white", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" > <SendIcon />
+      <IconButton style={{width:'fit-content', alignSelf: "center",marginLeft: '5px', marginTop: "12px", color: "white", backgroundColor: "#004258"}} onClick={() => handleSubmit()} variant="contained" > <SendIcon />
       </IconButton>
       </div>
       </div>
