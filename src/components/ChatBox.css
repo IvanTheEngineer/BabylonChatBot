@@ -3,7 +3,8 @@
     box-sizing: border-box;
     margin: auto;
     border: 2px solid #b5b5b5;
-    overflow: hidden;
-    min-height: 200px;
+    overflow: scroll;
+    height: 65vh;
+    max-height: 600px;
     background-color: rgb(236, 233, 233);
 }
